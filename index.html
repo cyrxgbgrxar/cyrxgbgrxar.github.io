@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Plektotecne</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="stylesheet" type="text/css" href="/cryptofont.min.css">
+        <meta name="msapplication-TileColor" content="#da532c">
+        <meta name="theme-color" content="#ffffff">
+        
+        <style>
+        
+            html {
+	            scroll-behavior: smooth;
+                -webkit-user-select: none;
+                -khtml-user-select: none;
+                -moz-user-select: none;
+                -ms-user-select: none;
+                user-select: none;
+            }
+            
+            @media screen and (prefers-reduced-motion: reduce) {
+	            html {scroll-behavior: auto;}
+            }
+
+            body {
+                margin:0;
+                padding:0;
+            }
+            
+            .parallax {
+                background-image: url('plektotekne.jpg');
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                height: 100vh;
+                padding: 0;
+                margin: 0;
+            }
+
+            #cover {
+                background: #000;
+                transition: 0.5s;
+                height: 100vh;
+                opacity: 0;
+            }
+
+            #information {
+                margin: 0;
+                padding: 6em 0;
+                left: 0;
+                right: 0;
+                position: absolute;
+                text-align: justify;
+                white-space: nowrap;
+                color: #eee;
+                /*word-break: break-all;*/
+                white-space: normal;
+                word-wrap: break-word;
+                background-color: #111;
+                font-family: Roboto, Arial, Helvetica, sans-serif;
+                font-size: 1em;
+                hyphens: auto;
+            }   
+                     
+            form {
+                border: 3px solid #fff;
+                border-radius: 5px;
+                display: flex;
+                flex-direction: column;
+                flex: 1 1 auto;
+            }
+            
+            div.form_controls {
+                display: flex;
+                flex-direction: row;
+                flex-wrap: wrap;
+                flex-grow: 1;
+                flex-shrink: 0;
+            } 
+            
+            input, textarea {
+                border: none;
+                background-color: #111;
+                color: #eee;
+                font-weight: bold;
+                font-size: 1.5em;
+                margin: 0;
+                padding: 1em;
+                min-width: 0;
+            }
+            
+            textarea {
+                height: 10em;
+                resize: none;
+                border-radius: 5px 5px 0 0;
+            }
+            
+            input {
+                border-top: 3px solid #fff;
+                /*border-right: 1.5px solid #fff;
+                border-left: 1.5px solid #fff;*/
+                font-size: 1em;
+                padding: 0.5em;
+                padding-left: 0.8em;
+                padding-top: 0.8em;
+                padding-bottom: 0.8em;
+                display: flex;
+                flex-grow: 2;
+                border-radius: 0 0 0 1px;
+            }
+
+            input:focus, textarea:focus {
+                background-color: #1e1e1e;
+            }
+            
+            input#button {
+                color: #000;
+                background-color: #eee;
+                border-radius: 0 0 1px 0;
+                justify-content: center;
+                align-items: center;
+            }
+            
+            input#button:hover, input#button:focus{
+                color: #111;
+                background-color: #fff;
+            }
+            
+            ::placeholder {
+                font-weight: bold;
+                color: #ffffff;
+            }
+            
+            h1, h2 {
+                padding: 0;
+                margin: 0.7em 0;
+                text-align: center;
+                line-height:0;
+            }
+            
+            h1 {
+                font-size:13vw;
+            }
+            
+            h2 {
+                font-size:6.1vw;
+            }
+            
+            h3 {
+                font-size:2em;
+            }
+            
+            @media screen and (max-width: 200px) {
+                h1, h2 {
+                    margin: 0; padding: 0;
+                    line-height: 1em;
+                }
+                h1 {
+                    font-size: 1.8em;
+                }
+                h2 {
+                    font-size: 0.9em;
+                }
+            }
+            
+            a:link {
+              color: #fff;
+              border-bottom: 0.05em dashed #888;
+              text-decoration: none;
+            }
+            
+            a:visited {
+              color: #ccc;
+            }
+            
+            a:hover {
+              color: #aaa;
+            }
+            
+            a:active {
+              color: #999;
+            }
+            
+            a.arrow {
+                position: fixed;
+                background-color: #eee;
+                border-radius: 100%;
+                border: solid 0.2em #000;
+                text-align: center;
+                width: 2em;
+                height: 2em;
+                bottom: 1em;
+                right: 1em;
+            }
+            
+            i.arrow {
+                transform: rotate(45deg) translate(0.3em, 0.3em);
+                border: solid #000;
+                border-width: 0 0.2em 0.2em 0;
+                display: inline-block;
+                padding: 0.3em;
+            }
+            
+            dl, dl > div {
+                margin: 0;
+                padding: 0;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                flex-direction: row;
+                flex-wrap: wrap;
+                display: flex;
+            }
+            
+            @media screen and (min-width: 1240px) {
+                dl, dl > div {
+                    font-size:1.2vw;
+                }
+            }
+            
+            dl > div {
+                margin: 0.4em;
+                border-radius: 0.4em;
+                border: solid 3px #eee;
+                flex: 1 1 1;
+            }
+            
+            dl > div > dd, dl > div > dt {
+                margin: 0;
+                padding: 0.3em 0.8em;
+            }
+            
+            dl > div > dt {
+                color: #000;
+                background-color: #eee;
+                flex: 1;
+            }
+
+            section {
+                margin: 5vw 0;
+                margin-top: 8em; 
+                padding: 0 12vw; 
+            }
+            
+            section#title {
+                padding: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="parallax" id="picture" role="img"
+             aria-label="black and white woodcut depicting a circle-shaped irregular ink blot surrounded by a roulette mathematical function">
+            <a class="arrow" href="#information">
+                <i class="arrow"></i>
+            </a>
+        </div>
+        <div id="information">
+            <section id="title">
+                <h1>Plekto​tekne</h1>
+                <h2>weaving the randomness</h2>
+            </section>
+            <section id="characteristics">
+                <dl>
+                    <div>
+                        <dt>medium</dt>
+                        <dd>
+                            <a href="https://en.wikipedia.org/wiki/Woodcut" target="_blank">
+                                woodcut
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>structure</dt>
+                        <dd>book</dd>
+                    </div>
+                    <div>
+                        <dt>pages</dt>
+                        <dd>8</dd>
+                    </div>
+                    <div>
+                        <dt>uniqueness</dt>
+                        <dd>
+                            <a href="https://en.wikipedia.org/wiki/Monoprinting" target="_blank">
+                                monoprint
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>dimensions</dt>
+                        <dd>
+                            <span title="Width">135&nbsp;mm</span> ×&nbsp;<span title="Height">180&nbsp;mm</span>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>price</dt>
+                        <dd aria-label="256 bitcoin" title="256 bitcoin">
+                            <a href="https://en.wikipedia.org/wiki/Bitcoin" target="_blank">
+                                256<i class="cf cf-btc"></i>
+                            </a>
+                        </dd>
+                    </div>
+                    <div>
+                        <dt>date</dt>
+                        <dd><span title="Year">2017</span>-<span title="Month">12</span>-<span title="Day">21</span></dd>
+                    </div>
+                    <div>
+                        <dt>artist</dt>
+                        <dd>
+                            <a>
+                                0xfd4c405f
+                            </a>
+                        </dd>
+                    </div>
+                </dl>
+            </section>
+            <section id="contact">
+                <form name="contact" action="#" method="POST">
+                    <textarea name="message" placeholder="Message..."></textarea>
+                    <div class="form_controls">
+                        <input name="name" id="name" placeholder="Name" type="text"> 
+                        <input name="address" id="address" placeholder="Address" type="text"> 
+                        <input type="submit" id="button" value="Contact">
+                    </div>
+                </form>
+            </section>
+        </div>
+    </body>
+</html>

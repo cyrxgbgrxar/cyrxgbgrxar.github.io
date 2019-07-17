@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: *.png
+Disallow: *.jpg
+Disallow: *.ico
+Disallow: *.svg
+Disallow: *.txt
+Disallow: *.xml
+Disallow: *.css
+Disallow: *.webmanifest
